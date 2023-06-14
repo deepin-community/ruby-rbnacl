@@ -1,0 +1,26 @@
+From: Lucas Nussbaum <lucas@debian.org>
+Date: Sat, 8 Jul 2017 22:45:46 +0200
+Subject: Drop dependencies on development gems
+
+---
+ Gemfile | 2 --
+ 1 file changed, 2 deletions(-)
+
+Index: rbnacl-7.1.0/Gemfile
+===================================================================
+--- rbnacl-7.1.0.orig/Gemfile
++++ rbnacl-7.1.0/Gemfile
+@@ -5,13 +5,11 @@ source "https://rubygems.org"
+ gemspec
+ 
+ group :development do
+-  gem "guard-rspec"
+ end
+ 
+ group :test do
+   gem "coveralls", require: false
+   gem "rspec"
+-  gem "rubocop", "= 0.70.0"
+ end
+ 
+ group :development, :test do

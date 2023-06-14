@@ -1,0 +1,31 @@
+From: Lucas Nussbaum <lucas@debian.org>
+Date: Sun, 9 Jul 2017 08:57:11 +0200
+Subject: Drop development dependency on bundler
+
+---
+ rbnacl.gemspec      | 2 --
+ spec/spec_helper.rb | 1 -
+ 2 files changed, 3 deletions(-)
+
+Index: ruby-rbnacl-7.1.1/rbnacl.gemspec
+===================================================================
+--- ruby-rbnacl-7.1.1.orig/rbnacl.gemspec
++++ ruby-rbnacl-7.1.1/rbnacl.gemspec
+@@ -29,5 +29,4 @@ Gem::Specification.new do |spec|
+   spec.require_paths = ["lib"]
+   spec.required_ruby_version = ">= 2.3.0"
+   spec.add_runtime_dependency "ffi"
+-  spec.add_development_dependency "bundler"
+ end
+Index: ruby-rbnacl-7.1.1/spec/spec_helper.rb
+===================================================================
+--- ruby-rbnacl-7.1.1.orig/spec/spec_helper.rb
++++ ruby-rbnacl-7.1.1/spec/spec_helper.rb
+@@ -8,7 +8,6 @@ Coveralls.wear!
+ # Run the specs prior to running the self-test
+ $RBNACL_SELF_TEST = false
+ 
+-require "bundler/setup"
+ require "rbnacl"
+ 
+ require "shared/box"
