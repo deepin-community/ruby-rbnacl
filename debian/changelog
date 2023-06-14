@@ -1,5 +1,74 @@
-template-repository (1.0-1) unstable; urgency=medium
+ruby-rbnacl (7.1.1-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Unit 193 ]
+  * New upstream version 7.1.1
+    - Drop obsolete patches, refresh remaining patches.
+  * d/compat, d/control:
+    - Drop d/compat in favor of debhelper-compat, bump to 12.
+  * d/control:
+    - Update Vcs-* fields.
+    - Update homepage.
+    - Remove myself from uploaders.
+    - R³: no.
+  * d/copyright: Use 'https' in format field, update years.
+  * d/control, d/p/provide_libsodium.patch, d/rbnacl-libsodium.gemspec,
+    d/ruby-rbnacl.install: Drop rbnacl-libsodium, the concept was deprecated.
+    - Drop depends on pkg-config and libsodium-dev.
+    - Depend on libsodium18 | libsodium23.
+    - Remove provides for ruby-rbnacl-libsodium.
+  * d/rules: Trim comments, remove dh_clean override.
+  * Update Standards-Version to 4.5.0.
+
+ -- Unit 193 <unit193@ubuntu.com>  Sat, 01 Feb 2020 00:14:52 -0500
+
+ruby-rbnacl (5.0.0-4) unstable; urgency=medium
+
+  * Reintroduce to archive for ruby-jwt 2 (build dependency)
+  * Bump debhelper compatibility level to 11
+  * Bump Standards-Version to 4.3.0 (no changes needed)
+  * Move debian/watch to gemwatch.debian.net
+  * Add myself to uploaders
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 05 Feb 2019 18:55:51 +0530
+
+ruby-rbnacl (5.0.0-3) unstable; urgency=medium
+
+  * d/p/provide_libsodium.patch: Specify what version of libsodium we have.
+  * d/control: Depend on pkg-config for the aforementioned.
+  * d/ruby-rbnacl.install, d/rbnacl-libsodium.gemspec:
+    - Provide rbnacl-libsodium gemspec too.
+
+ -- Unit 193 <unit193@ubuntu.com>  Wed, 27 Dec 2017 01:38:22 -0500
+
+ruby-rbnacl (5.0.0-2) unstable; urgency=medium
+
+  * d/p/0006-fix-blake2b_state-struct-size.patch:
+    - Add patch from Ubuntu: pad blake2b_state struct declaration for libsodium
+      1.0.13.  Thanks to Steve Langasek for the patch. (Closes: #871093)
+  * Update Standards-Version to 4.1.0.
+
+ -- Unit 193 <unit193@ubuntu.com>  Thu, 31 Aug 2017 06:33:43 -0400
+
+ruby-rbnacl (5.0.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Unit 193 ]
+  * Initial release.
+
+  [ Lucas Nussbaum ]
+  * Add Unit 193 to Uploaders
+  * Add Vcs-*
+  * Add b-dep on libsodium-dev (needed for tests); run wrap-and-sort -a
+  * Add debian/patches/disable-devel-gems: drop dependencies on development gems
+  * Add build-dependency on ruby-coveralls
+  * Add patch: 0003-Drop-usage-of-git-in-gemspec.patch
+  * Add patch: 0004-Drop-gem-dependency-on-rbnacl-libsodium.patch
+  * Enable tests
+
+ -- Lucas Nussbaum <lucas@debian.org>  Sun, 09 Jul 2017 09:20:26 +0200

@@ -1,0 +1,3 @@
+disable-devel-gems
+0003-Drop-usage-of-git-in-gemspec.patch
+0005-Drop-development-dependency-on-bundler.patch
